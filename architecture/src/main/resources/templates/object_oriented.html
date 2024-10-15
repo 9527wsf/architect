@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>面向对象软件体系结构</h1>
+<p th:text="${description}"></p>
+<pre th:text="${codeExample}"></pre>
+<img th:src="@{/images/2.png}" alt="原理图">
+
+<form action="/run-object-oriented" method="post" enctype="multipart/form-data">
+    <input type="file" name="inputFile" required>
+    <button type="submit">运行</button>
+</form>
+
+<div th:if="${result}">
+    <h2>运行结果:</h2>
+    <pre th:text="${result}"></pre>
+</div>
+<div th:if="${error}">
+    <p style="color:red;" th:text="${error}"></p>
+</div>
+
+<a href="/">返回</a>
+</body>
+</html>
